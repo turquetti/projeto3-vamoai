@@ -1,6 +1,5 @@
 # PROJETO 3 - RESILIA
 
-<<<<<<< Felipe
 <p align="center">
 <img src = "./imagens/capa.png" width=800px>
 </p>
@@ -55,7 +54,6 @@ Utilizando o sistema gerenciador de banco de dados PostgreSQL, aliada a ferramen
 	</table>
 	<br>
 
+
 # Fluxograma
-=======
-Mais um teste kkk
->>>>>>> felipe/readme
+
