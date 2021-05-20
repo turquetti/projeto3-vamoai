@@ -32,29 +32,29 @@ rename to episodes
 
 alter table houses_v1_csv 
 rename to houses
-
+;
 
 
 --Média da nota por temporada 
-select e.season, round(avg(e.rating)::decimal, 2) "Notas médias" from got_episodes_v4_csv e
+select e.season, round(avg(e.rating)::decimal, 2) "Notas médias" from episodes e 
 group by e.season
 order by "Notas médias" desc 
 ;
 
 --Qual temporada tem melhor nota
-select e.season, round(avg(e.rating)::decimal, 2) "Notas médias" from got_episodes_v4_csv e
+select e.season, round(avg(e.rating)::decimal, 2) "Notas médias" from episodes e 
 group by e.season
 order by "Notas médias" desc
 limit 1
 ;
 
 --Personagem que mais apareceu
-select c.characters_name, (c.last_appearance-c.first_appearance) Anos from characters_v4_csv c
+select c.characters_name, (c.last_appearance-c.first_appearance) Anos from characters1 c 
 order by Anos desc
 ;
 
 --Casas por região
-select h.region, count(h.region) as "Quantidade de casas por região" from houses_v1_csv h 
+select h.region, count(h.region) as "Quantidade de casas por região" from houses h 
 group by h.region 
 order by "Quantidade de casas por região" desc 
 ;
