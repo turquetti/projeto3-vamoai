@@ -1,18 +1,18 @@
---Chave primária dos personagens
+--Chave primï¿½ria dos personagens
 alter table characters_v4_csv 
 add id_characters serial not null;
 
 ALTER TABLE characters_v4_csv
 ADD CONSTRAINT id_characters PRIMARY KEY (id_characters);
 
---Chave primária das casas
+--Chave primï¿½ria das casas
 alter table houses_v1_csv 
 add id_house serial not null;
 
 ALTER TABLE houses_v1_csv 
 ADD CONSTRAINT id_house PRIMARY KEY (id_house);
 
---Chave primária dos episódios
+--Chave primï¿½ria dos episï¿½dios
 alter table got_episodes_v4_csv 
 add id_episode serial not null;
 
@@ -35,16 +35,16 @@ rename to houses
 ;
 
 
---Média da nota por temporada 
-select e.season, round(avg(e.rating)::decimal, 2) "Notas médias" from episodes e 
+--Mï¿½dia da nota por temporada 
+select e.season, round(avg(e.rating)::decimal, 2) "Notas mï¿½dias" from episodes e 
 group by e.season
-order by "Notas médias" desc 
+order by "Notas mï¿½dias" desc 
 ;
 
 --Qual temporada tem melhor nota
-select e.season, round(avg(e.rating)::decimal, 2) "Notas médias" from episodes e 
+select e.season, round(avg(e.rating)::decimal, 2) "Notas mï¿½dias" from episodes e 
 group by e.season
-order by "Notas médias" desc
+order by "Notas mï¿½dias" desc
 limit 1
 ;
 
@@ -53,11 +53,12 @@ select c.characters_name, (c.last_appearance-c.first_appearance) Anos from chara
 order by Anos desc
 ;
 
---Casas por região
-select h.region, count(h.region) as "Quantidade de casas por região" from houses h 
+--Casas por regiï¿½o
+select h.region, count(h.region) as "Quantidade de casas por regiï¿½o" from houses h 
 group by h.region 
-order by "Quantidade de casas por região" desc 
+order by "Quantidade de casas por regiï¿½o" desc 
 ;
 
+--RelaÃ§Ã£o em nota do epsÃ³dio e escritor
 
 
