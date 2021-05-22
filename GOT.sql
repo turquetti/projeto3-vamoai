@@ -59,6 +59,11 @@ group by h.region
 order by "Quantidade de casas por regi�o" desc 
 ;
 
---Relação em nota do epsódio e escritor
+--Relação em nota do episódio versus diretor
+select director, round(avg(rating)::numeric, 2) 
+from got_episodes_v4_csv gevc2 
+group by director 
+order by avg(rating) desc
+;
 
 
