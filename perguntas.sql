@@ -1,13 +1,13 @@
 --M�dia da nota por temporada 
-select e.season, round(avg(e.rating)::decimal, 2) "Notas m�dias" from episodes e 
+select e.season, round(avg(e.rating)::decimal, 2) "Notas medias" from episodes e 
 group by e.season
-order by "Notas m�dias" desc 
+order by "Notas medias" desc 
 ;
 
 --Qual temporada tem melhor nota
-select e.season, round(avg(e.rating)::decimal, 2) "Notas m�dias" from episodes e 
+select e.season, round(avg(e.rating)::decimal, 2) "Notas medias" from episodes e 
 group by e.season
-order by "Notas m�dias" desc
+order by "Notas medias" desc
 limit 1
 ;
 
@@ -17,9 +17,9 @@ order by Anos desc
 ;
 
 --Casas por regi�o
-select h.region, count(h.region) as "Quantidade de casas por regi�o" from houses h 
+select h.region, count(h.region) as "Quantidade de casas por regiao" from houses h 
 group by h.region 
-order by "Quantidade de casas por regi�o" desc 
+order by "Quantidade de casas por regiao" desc 
 ;
 
 --Relação em nota do episódio versus diretor
@@ -28,5 +28,3 @@ from got_episodes_v4_csv gevc2
 group by director 
 order by avg(rating) desc
 ;
-
-
