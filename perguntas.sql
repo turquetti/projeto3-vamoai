@@ -17,9 +17,17 @@ order by Anos desc
 ;
 
 --Casas por regiï¿½o
-select h.region, count(h.region) as "Quantidade de casas por regiao" from houses h 
+select h.region, count(h.region) as "Quantidade de casas por regiao" from houses_v1_csv
 group by h.region 
 order by "Quantidade de casas por regiao" desc 
+LIMIT 9
+;
+
+--Valor relativo de casas por região
+select h.region, round((count(h.region)*100)/471::numeric, 2) as "Valor relativo de casas por região" from houses_v1_csv
+group by h.region 
+order by "Valor relativo de casas por região" desc 
+limit 9
 ;
 
 --RelaÃ§Ã£o em nota do episÃ³dio versus diretor
@@ -28,3 +36,9 @@ from got_episodes_v4_csv gevc2
 group by director 
 order by avg(rating) desc
 ;
+
+--Número de episódios dos 3 diretores com melhor média
+select e.director Diretor, e.season Temporada, count(e.episode) "Nº de episódios" from got_episodes_v4_csv e
+where e.director ilike 'Neil Marshall' or e.director ilike 'Alex Graves' or e.director ilike 'Matt Shakman'
+group by  e.director, e.season
+order by e.director ;
