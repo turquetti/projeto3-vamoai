@@ -57,3 +57,6 @@ Utilizando o sistema gerenciador de banco de dados PostgreSQL, aliada a ferramen
 
 # Fluxograma
 
+<p align="center">
+<img src = './imagens/fluxograma_GOT.png' width=800px>
+</p>
