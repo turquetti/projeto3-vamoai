@@ -1,22 +1,31 @@
-----------------------------------------------ANÁLISE GERAL DA SÉRIE--------------------------------------------------------
+----------------------------------------------ANÃ�LISE GERAL DA SÃ‰RIE--------------------------------------------------------
 
--- Episódios por temporada
+-- EpisÃ³dios por temporada
 select season, count(season) as total 
 from episodes_got
 group by season
 order by season
 ;
 
--- Total de episódios
+-- Total de episÃ³dios
 select count(episode) as total
 from episodes_got
 ;
 
--- Duração da série em minutos
+-- DuraÃ§Ã£o da sÃ©rie em minutos
 select sum(duration) from episodes_got
 ;
 
-----------------------------------------------ANÁLISE DE DESEMPENHO DA SÉRIE--------------------------------------------------------
+----------------------------------------------ANÃ�LISE DE DESEMPENHO DA SÃ‰RIE--------------------------------------------------------
+
+------------------------Audiência
+select 
+	season, 
+	round(avg(e.us_viewers)::numeric, 2) "Audiência média" 
+from episodes_got e
+group by e.season
+order by "Audiência média" desc
+;
 
 ------------------------ Por temporada
 --Media da nota por temporada 
@@ -33,7 +42,7 @@ limit 1
 ;
 
 ------------------------ Por diretores
---Relação em nota do episódio versus diretor
+--RelaÃ§Ã£o em nota do episÃ³dio versus diretor
 select director, round(avg(rating)::numeric, 2) 
 from got_episodes_v4_csv gevc2 
 group by director 
@@ -41,25 +50,49 @@ order by avg(rating) desc
 ;
 
 --Numero de episodios dos 3 diretores com melhor media
-select e.director Diretor, e.season Temporada, count(e.episode) "N� de epis�dios" from got_episodes_v4_csv e
+select e.director Diretor, e.season Temporada, count(e.episode) "Nï¿½ de episï¿½dios" from got_episodes_v4_csv e
 where e.director ilike 'Neil Marshall' or e.director ilike 'Alex Graves' or e.director ilike 'Matt Shakman'
 group by  e.director, e.season
 order by e.director 
 ;
 
 ----------------------------------------------UNIVERSO DE WESTEROS--------------------------------------------------------
+--Distribuição por gênero
+select 	gender, 
+		round((count(gender)*100)/831::numeric, 2) Gênero
+from (select gender from characters_v4_csv c where gender != '') Gênero
+group by gender
+order by Gênero desc
+;
 
---Casas por regi�o
+--Casas por regiï¿½o
 select h.region, count(h.region) as "Quantidade de casas por regiao" from houses_v1_csv
 group by h.region 
 order by "Quantidade de casas por regiao" desc 
 LIMIT 9
 ;
 
---Valor relativo de casas por regi�o
-select h.region, round((count(h.region)*100)/471::numeric, 2) as "Valor relativo de casas por regi�o" from houses_v1_csv
+--Personagens por casas
+select 	c.name_by_house House, 
+		count(c.name_by_house) Members
+from (select 	
+			c.name_by_house 
+			from characters_v4_csv c 
+			where 
+				name_by_house is not null and 
+				name_by_house != 'Wildling' and
+				name_by_house  != '"White Walkers"' and
+				name_by_house  != 'Nights Watch'
+			) c
+group by c.name_by_house 
+order by Members desc
+limit 10
+;
+
+--Valor relativo de casas por regiï¿½o
+select h.region, round((count(h.region)*100)/471::numeric, 2) as "Valor relativo de casas por regiï¿½o" from houses_v1_csv
 group by h.region 
-order by "Valor relativo de casas por regi�o" desc 
+order by "Valor relativo de casas por regiï¿½o" desc 
 limit 9
 ;
 
@@ -77,4 +110,4 @@ from duration_character
 order by Total desc
 limit 10
 
--- relação entre o tempo de tela e a aparição dos personagens
+-- relaÃ§Ã£o entre o tempo de tela e a apariÃ§Ã£o dos personagens

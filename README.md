@@ -8,11 +8,11 @@
 
 Projeto de finalização do terceiro módulo da turma VamoAI. A turma VamoAI é uma parceria da [Resilia Educação](https://www.resilia.work/sobre) com o Ifood para formação de novos analistas de dados.
 
-Ao fim de cada módulo produzimos, em grupos, um projeto para finalização de mais uma etapa em nossa jornada e neste módulo analisamos o banco de dados da aclamada série Game Of Thrones da HBO. O banco de dados está disponível no site do [Kaggle](https://www.kaggle.com/rezaghari/game-of-thrones)
+Ao fim de cada módulo produzimos, em grupos, um projeto para finalização de mais uma etapa em nossa jornada e neste módulo analisamos o banco de dados da aclamada série Game Of Thrones da HBO. 
 
 Utilizando o sistema gerenciador de banco de dados PostgreSQL, aliada a ferramenta de elaboração de insights Metabase, buscamos entender mais sobre o universo fantástico de Westeros, sobre a visão da audiência e da crítica, sobre dados da produção da série e, também, como espectadores, buscamos responder curiosidades nossas.
 
-(falta uma parte explicando onde estarão os scripts e os gráficos)
+Os bancos de dados utilizados por nós estão disponíveis aqui no repositório na pasta Database. Esses bancos foram retirados do site do [Kaggle](https://www.kaggle.com/rezaghari/game-of-thrones) e, também, do GitHub do [Jeffrey Lancaster](https://github.com/jeffreylancaster/game-of-thrones).
 
 
 # Integrantes
@@ -60,3 +60,4 @@ Utilizando o sistema gerenciador de banco de dados PostgreSQL, aliada a ferramen
 <p align="center">
 <img src = './imagens/fluxograma_GOT.png' width=800px>
 </p>
+
