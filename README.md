@@ -14,6 +14,8 @@ Utilizando o sistema gerenciador de banco de dados PostgreSQL, aliada a ferramen
 
 Os bancos de dados utilizados por nós estão disponíveis aqui no repositório na pasta Database. Esses bancos foram retirados do site do [Kaggle](https://www.kaggle.com/rezaghari/game-of-thrones) e, também, do repositório do GitHub do [Jeffrey Lancaster](https://github.com/jeffreylancaster/game-of-thrones).
 
+Acesse nossa documentação [aqui](https://github.com/turquetti/projeto3-vamoai/wiki/DOCUMENTA%C3%87%C3%83O)!
+
 
 # Integrantes
 
