@@ -12,7 +12,7 @@ Ao fim de cada módulo produzimos, em grupos, um projeto para finalização de m
 
 Utilizando o sistema gerenciador de banco de dados PostgreSQL, aliada a ferramenta de elaboração de insights Metabase, buscamos entender mais sobre o universo fantástico de Westeros, sobre a visão da audiência e da crítica, sobre dados da produção da série e, também, como espectadores, buscamos responder curiosidades nossas.
 
-Os bancos de dados utilizados por nós estão disponíveis aqui no repositório na pasta Database. Esses bancos foram retirados do site do [Kaggle](https://www.kaggle.com/rezaghari/game-of-thrones) e, também, do GitHub do [Jeffrey Lancaster](https://github.com/jeffreylancaster/game-of-thrones).
+Os bancos de dados utilizados por nós estão disponíveis aqui no repositório na pasta Database. Esses bancos foram retirados do site do [Kaggle](https://www.kaggle.com/rezaghari/game-of-thrones) e, também, do repositório do GitHub do [Jeffrey Lancaster](https://github.com/jeffreylancaster/game-of-thrones).
 
 
 # Integrantes
