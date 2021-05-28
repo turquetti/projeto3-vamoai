@@ -1,5 +1,10 @@
-Arquivos Database
+# Arquivos Database
 
-Fonte - Batalhas: https://www.kaggle.com/prashant111/game-of-thrones
-Fonte - Personagens: https://github.com/jeffreylancaster/game-of-thrones
+### Fontes
+
+- Episódios, personagens e casas:  
+ https://github.com/jeffreylancaster/game-of-thrones
+
+- Informações complementares sobre personagens:  
+ https://github.com/jeffreylancaster/game-of-thrones
 
